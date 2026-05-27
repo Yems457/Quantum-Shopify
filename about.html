@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the heritage, the team, and the mission behind ElectroMart.">
+    <title>About Us | ElectroMart Inc.</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- 1. VARIABLES & GLOBAL --- */
+        :root {
+            --stone-950: #0c0a09;
+            --stone-900: #1c1917;
+            --stone-800: #292524;
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --white: #fafaf9;
+            --stone-400: #a8a29e;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--stone-950);
+            color: var(--white);
+            margin: 0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- 2. NAVIGATION & DRAWER --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            background: var(--stone-900);
+            border-bottom: 1px solid var(--stone-800);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            color: var(--amber-500);
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Desktop Nav */
+        header nav { margin-left: auto; display: flex; }
+        header nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
+        header nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        header nav a:hover { color: var(--amber-500); }
+
+        /* Icon & Toggle Logic */
+        #menu-toggle { display: none; }
+        .menu-icons-wrapper { display: none; cursor: pointer; color: var(--amber-500); font-size: 1.5rem; }
+        .close-icon-inside { display: none; }
+
+        @media (max-width: 768px) {
+            .menu-icons-wrapper { display: block; order: -1; }
+
+            header nav {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                width: 280px;
+                height: 100vh;
+                background: var(--stone-900);
+                flex-direction: column;
+                padding: 5rem 2rem;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+                border-right: 2px solid var(--amber-500);
+                margin-left: 0;
+                z-index: 2001;
+            }
+
+            header nav ul { flex-direction: column; gap: 1.5rem; width: 100%; }
+
+            #menu-toggle:checked ~ nav { transform: translateX(300px); }
+
+            .close-icon-inside {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 1.8rem;
+                color: var(--amber-500);
+                cursor: pointer;
+            }
+
+            #menu-toggle:checked ~ .menu-icons-wrapper { visibility: hidden; }
+
+            header nav a {
+                font-size: 1.3rem;
+                display: block;
+                border-bottom: 1px solid var(--stone-800);
+                padding-bottom: 10px;
+            }
+        }
+
+        /* --- 3. PAGE CONTENT --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 5%; }
+
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 12px;
+            border-left: 8px solid var(--amber-500);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        h2 { color: var(--amber-500); font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 1.5rem; }
+        p { color: var(--stone-400); font-size: 1.1rem; }
+
+        /* Barbers Section */
+        .electro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .electro-card {
+            position: relative;
+            background: var(--stone-900);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 450px;
+            border: 1px solid var(--stone-800);
+        }
+
+        .electro-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .electro-card:hover img { transform: scale(1.1); }
+
+        .electro-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, var(--stone-950) 80%, transparent);
+            padding: 2rem 1.5rem;
+            transform: translateY(100px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .electro-card:hover .barber-info { transform: translateY(0); }
+
+        .electro-info h4 { color: var(--amber-500); margin: 0; font-size: 1.4rem; text-transform: uppercase; }
+        .electro-info span { display: block; color: var(--white); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1rem; }
+
+        /* --- 4. FOOTER --- */
+        footer {
+            background-color: var(--stone-900);
+            padding: 4rem 0 2rem;
+            border-top: 4px solid var(--amber-500);
+            margin-top: 5rem;
+        }
+
+        .footer-container {
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 { color: var(--amber-500); margin-bottom: 1.2rem; text-transform: uppercase; }
+        .footer-section ul { list-style: none; padding: 0; margin: 0; }
+        .footer-section li { margin-bottom: 0.5rem; color: var(--stone-400); font-size: 0.95rem; }
+        .footer-section a { color: inherit; text-decoration: none; transition: 0.3s; }
+        .footer-section a:hover { color: var(--amber-500); }
+
+        .social-links { display: flex; gap: 12px; margin-top: 1.5rem; }
+        .social-links a {
+            display: flex; align-items: center; justify-content: center;
+            width: 38px; height: 38px; background: var(--stone-800);
+            color: var(--white); border-radius: 50%; transition: 0.3s;
+        }
+        .social-links a:hover { background: var(--amber-500); color: var(--stone-950); transform: translateY(-3px); }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--stone-800);
+            padding: 2rem 5% 0;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .story-section { grid-template-columns: 1fr; gap: 2rem; }
+            .container { padding-top: 3rem; }
+            .barber-info { transform: translateY(0); background: rgba(12, 10, 9, 0.9); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <input type="checkbox" id="menu-toggle">
+        
+        <label for="menu-toggle" class="menu-icons-wrapper">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <h1>ElectroMart Inc</h1>
+
+        <nav>
+            <label for="menu-toggle" class="close-icon-inside">
+                <i class="fas fa-times"></i>
+            </label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="story-section">
+            <article>
+                <h2>Bridging the Gap Between Complexity and Comfort</h2>
+                <p>It started in a cluttered home office, surrounded by wires, screens, and a deep frustration with the "latest" tech that felt more complicated than helpful. As founders of ElectroMart, we realized that the average consumer wasn't just buying gadgets; they were trying to buy better lives.</p>
+                <p>We wanted to create a place where technology feels accessible. Our mission is to curate the most reliable, efficient, and user-friendly electronics on the market—testing them ourselves so you don't have to. Whether it’s a smart home gadget or a high-performance computer, we believe in tech that works for you.</p>
+            </article>
+            <div class="story-image">
+                <img src="https://plus.unsplash.com/premium_photo-1661904463156-50f7253a0afe?q=80&w=1197&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Our office">
+            </div>
+        </section>
+
+        <section class="Electro-section">
+            <h3 style="text-align: center;">The Master Planners</h3>
+            <p style="text-align: center;">Our team consists of certified specialists with over 15 years of combined experience.</p>
+            
+            <div class="Electro-grid">
+                <div class="electro-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1707155465551-0d2b570926d6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Founder">
+                    <div class="electro-info">
+                        <h4>Teddy Lee</h4>
+                        <span>Cybersecurity Specialist & Founder</span>
+                        <p>Temmy is a proactive IT Specialist focused on optimizing system performance and enhancing security, with experience in managing network infrastructure and providing technical support. .</p>
+                    </div>
+                </div>
+
+                <div class="Electro-card">
+                    <img src="https://images.unsplash.com/photo-1586864030212-6da69ef44080?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="EaZyMe">
+                    <div class="electro-info">
+                        <h4>Zee Mills</h4>
+                        <span>E-commerce Manager</span>
+                        <p>The Brains Behind the Buy Button..</p>
+                    </div>
+                </div>
+
+                <div class="Electro-card">
+                    <img src="https://images.unsplash.com/photo-1624571395577-a7c02eb5e9ef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chief Executive Officer">
+                    <div class="barber-info">
+                        <h4>Tidal Grooves</h4>
+                        <span>Technician</span>
+                        <p>Handy man that brings you Best-of-both-worlds.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>ElectroMart</h4>
+                <p>Providing excellent products and a premium customer service since our founding.</p>
+               
+            </div>
+
+            <div class="footer-section">
+                <h4>Shop Hours</h4>
+                <ul>
+                    <li>Monday - Friday: 8AM - 5PM</li>
+                    <li>Saturday: 10AM - 2PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Grooming Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Visit US</h4>
+                <p>
+                    126 Sage Valley Grove, Toronto, Ontario<br>
+                    (+1) 587-581-7587<br>
+                    yems457@gmail.com
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ElectroMart Inc. All Rights Reserved. | Don't let your guard down.</p>
+        </div>
+    </footer>
+</body>
+</html>
