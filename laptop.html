@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Book your appointment at Azyet Fine Cuts. Contact us for premium barbering services.">
-    <title>Contact & Buying | ElectroMart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phones | Quantum Shopify</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
@@ -37,6 +37,14 @@
         }
 
         header h1 { color: var(--amber-500); font-size: 1.5rem; margin: 0; text-transform: uppercase; }
+
+        .story-image img {
+            width: 100%;
+           align-items: center;
+            border-radius: 12px;
+            border-left: 8px solid var(--amber-500);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
 
         .back-link {
             color: var(--white);
@@ -201,61 +209,59 @@
 <body>
 
     <header>
-        <h1>ElectroMart</h1>
+        <h1>Quantum-Shopify</h1>
         <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
     </header>
 
     <main class="container">
-        <section class="info-card">
-            <h2>Find Us</h2>
-            
-            <div class="info-item">
-                <i class="fas fa-location-dot"></i>
-                <div>
-                    <h4>Location</h4>
-                    <p>126 Sage Valley Grove, Toronto<br>city, Ontario</p>
-                </div>
-            </div>
+        <div class="min-h-screen lg:flex">
+        
+        <aside class="w-64 bg-gray-900 text-white p-4 grid-cols-3 grid-cols-[auto,1fr]">
+            <div class="text-2xl font-bold mb-10">Quantum-Shopify</div>
+            <nav class="space-y-2">
+                
+                <a href="laptops.html" class="block p-2 hover:bg-slate-800 rounded">Laptops</a>
+               
+        </aside>
 
-            <div class="info-item">
-                <i class="fas fa-clock"></i>
-                <div>
-                    <h4>Hours</h4>
-                    <p>Mon - Fri: 9:00 AM - 3:00 PM<br>Sat: 11:00 AM - 4:00 PM<br>Sun: Closed</p>
+    <div class="story-image">
+                <div class="main-img">
+                    <!-- Responsive images that stays within a max width -->
+    
+    <img class="max-w-md h-auto mb-6 ms-6" src="https://images.unsplash.com/photo-1542393545-10f5cde2c810?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhcHRvcHN8ZW58MHx8MHx8fDA%3D" alt="Laptop">   
+     <img class="max-w-md h-auto mb-6 ms-6" src="https://plus.unsplash.com/premium_photo-1681302547899-9339f12aca53?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGxhcHRvcHN8ZW58MHx8MHx8fDA%3D" alt="Laptop">   
+   
+     </div>
                 </div>
             </div>
-
-            <div class="info-item">
-                <i class="fas fa-phone"></i>
-                <div>
-                    <h4>Call Us</h4>
-                    <p>(+1) 587-581-7587</p>
-                </div>
-            </div>
-        </section>
+    
 
         <section>
-           <section class="bg-white dark:bg-gray-900">
-  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us</h2>
-      <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback? Let us know.</p>
-      <form action="#" class="space-y-8">
-          <div>
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-              <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="name@flowbite.com" required>
-          </div>
-          <div>
-              <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-              <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Let us know how we can help you" required>
-          </div>
-          <div class="sm:col-span-2">
-              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-              <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..."></textarea>
-          </div>
-       <a href="404.html"><button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Send message</button></a>
-      </form>
-  </div>
-</section>
+            <h2>Place your order today</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="First-Name  Last-Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Device">Select Device</label>
+                    <select id="Device">
+    
+                        <option value="Laptop">Dell XPS 15 9520 14"- $3999.99</option>
+                        <option value="Laptop">Dell XPS 14 9440 (14-inch, Core Ultra 7 155H, RTX 4050) Laptop- $4999.99</option>
+                         
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <button class="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Confirm Purchase</button>
+            </form>
+        </section>
     </main>
 
    <footer>
@@ -263,15 +269,15 @@
             <div class="footer-section">
                 <h4>ElectroMart</h4>
                 <p>Experience the craft of premium powering</p>
-                
+            
             </div>
 
             <div class="footer-section">
                 <h4>Shop Hours</h4>
                 <ul>
-                    <li>Mon - Fri: 8:00 AM - 5:00 PM</li>
-                    <li>Saturday: 10:00 AM - 2:00 PM</li>
-                    <li>Sunday: Closed </li>
+                    <li>Mon - Fri: 9:00 AM - 8:00 PM</li>
+                    <li>Saturday: 10:00 AM - 6:00 PM</li>
+                    <li>Sunday: Closed</li>
                 </ul>
             </div>
 
