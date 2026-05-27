@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your appointment at Azyet Fine Cuts. Contact us for premium barbering services.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phones | Quantum-Shopify</title>
+    
+
+    <style>
+        :root {
+            --stone-950: #0c0a09;
+            --stone-900: #1c1917;
+            --stone-800: #292524;
+            --stone-700: #44403c;
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --white: #fafaf9;
+            --stone-400: #a8a29e;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--stone-950);
+            color: var(--white);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--stone-900);
+        }
+
+        header h1 { color: var(--amber-500); font-size: 1.5rem; margin: 0; text-transform: uppercase; }
+
+        .story-image img {
+            width: 100%;
+           align-items: center;
+            border-radius: 12px;
+            border-left: 8px solid var(--amber-500);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .back-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover { color: var(--amber-500); }
+
+        .container {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 0 10%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        h2 { color: var(--amber-500); margin-bottom: 1.5rem; font-size: 2rem; }
+
+        /* Contact Info Card */
+        .info-card {
+            background: var(--stone-900);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-top: 4px solid var(--amber-500);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .info-item i { color: var(--amber-500); font-size: 1.25rem; margin-top: 5px; }
+        .info-item h4 { margin: 0 0 5px 0; color: var(--white); }
+        .info-item p { margin: 0; color: var(--stone-400); }
+
+        /* Booking Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+        label { font-size: 0.9rem; font-weight: 600; color: var(--stone-400); }
+
+        input, select, textarea {
+            background: var(--stone-900);
+            border: 1px solid var(--stone-700);
+            padding: 0.8rem;
+            color: var(--white);
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus { border-color: var(--amber-500); }
+
+        button {
+            background: var(--amber-500);
+            color: var(--stone-950);
+            padding: 1rem;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover { background: var(--amber-600); transform: translateY(-2px); }
+
+        /* Master Footer Styles */
+        footer {
+            background-color: var(--stone-900);
+            padding: 4rem 10% 2rem;
+            border-top: 4px solid var(--amber-500);
+            margin-top: 5rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 { 
+            color: var(--amber-500); 
+            margin-bottom: 1.5rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p, .footer-section li { 
+            color: var(--stone-400); 
+            font-size: 0.95rem; 
+            line-height: 1.8; 
+        }
+
+        .footer-section ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0;
+        }
+
+        .footer-section a { 
+            color: inherit; 
+            text-decoration: none; 
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover { 
+            color: var(--amber-500); 
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: var(--stone-800);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-links a:hover {
+            background: var(--amber-500);
+            color: var(--stone-950);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--stone-800);
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--stone-700);
+        }
+
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Quantum-Shopify</h1>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
+    </header>
+
+    <main class="container">
+        <div class="min-h-screen lg:flex">
+        
+        <aside class="w-64 bg-gray-900 text-white p-4 grid-cols-3 grid-cols-[auto,1fr]">
+            <div class="text-2xl font-bold mb-10">Quantum-Shopify</div>
+            <nav class="space-y-2">
+
+                <a href="phones.html" class="block p-2 hover:bg-slate-800 rounded">Phones</a>
+               
+        </aside>
+
+    <div class="story-image">
+                <div class="main-img">
+                    <!-- Responsive images that stays within a max width -->
+    <img class="max-w-md h-auto mb-6 ms-6" src="https://images.unsplash.com/photo-1719945421298-f03d3d80c3e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNtYXJ0cGhvbmVzfGVufDB8fDB8fHww" alt="Phone">
+    <img class="max-w-md h-auto mb-6 ms-6" src="https://media.istockphoto.com/id/2218392253/photo/man-using-smartphone-with-blank-screen.webp?a=1&b=1&s=612x612&w=0&k=20&c=z5KZyZHeQQgCEQ6q70aIw30ZVSssfR3VRgm_MgqRwHk=" alt="Phone">  
+   
+     </div>
+                </div>
+            </div>
+    
+
+        <section>
+            <h2>Place your order today</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="First-Name  Last-Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Device">Select Device</label>
+                    <select id="Device">
+    
+                        <option value="Phone">I-Phone 17- $1999.99</option>
+                         <option value="Phone">Samsung Galaxy X-25 Ultra- $2999.99</option>
+                           <option value="Phone">Smart Phone X - $999.00</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <button class="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Confirm Purchase</button>
+            </form>
+        </section>
+    </main>
+
+   <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>ElectroMart</h4>
+                <p>Experience the craft of premium powering</p>
+            
+            </div>
+
+            <div class="footer-section">
+                <h4>Shop Hours</h4>
+                <ul>
+                    <li>Mon - Fri: 9:00 AM - 8:00 PM</li>
+                    <li>Saturday: 10:00 AM - 6:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Book Appointment</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Visit Us</h4>
+                <p>
+                    <i class="fas fa-map-marker-alt" style="color: var(--amber-500); margin-right: 8px;"></i>126 Sage Valley Grove, Toronto, Ontario<br>
+                    <i class="fas fa-phone" style="color: var(--amber-500); margin-right: 8px;"></i> (+1) 587-581-7587<br>
+                    <i class="fas fa-envelope" style="color: var(--amber-500); margin-right: 8px;"></i> hello@ElectroMart.com
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 ElectroMart Inc. All Rights Reserved. | Don't let your guard down.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
