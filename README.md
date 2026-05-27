@@ -1,7 +1,7 @@
 # ElectrMart Inc.
-A rich online electronic store designed for purchasing electronics like smartphones, laptops, monitors, and accessories
+A comprehensive e-commerce platform dedicated to premium electronics, such as smartphones, laptops, high-resolution monitors, and essential accessories.
 
-## Vision $ Mission
+## Mission
 To be the world’s most trusted online destination for innovative technology, empowering people to enhance their daily lives through seamless digital connectivity
 
 ## 🚀 Key Features
