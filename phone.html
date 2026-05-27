@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Book your appointment at Azyet Fine Cuts. Contact us for premium barbering services.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Phones | Quantum-Shopify</title>
-    
+    <title>Contact & Buying | ElectroMart</title>
+    <link rel="stylesheet" href="style.css">
 
     <style>
-        :root {
+
+         :root {
             --stone-950: #0c0a09;
             --stone-900: #1c1917;
             --stone-800: #292524;
@@ -204,6 +205,7 @@
         @media (max-width: 850px) {
             .container { grid-template-columns: 1fr; }
         }
+       
     </style>
 </head>
 <body>
@@ -217,19 +219,40 @@
         <div class="min-h-screen lg:flex">
         
         <aside class="w-64 bg-gray-900 text-white p-4 grid-cols-3 grid-cols-[auto,1fr]">
-            <div class="text-2xl font-bold mb-10">Phones</div>
+            <div class="text-2xl font-bold mb-10">Gallery</div>
             <nav class="space-y-2">
-
+                <a href="#" class="block p-2 bg-slate-800 rounded">All categories</a>
+                <a href="phone.html" class="block p-2 hover:bg-slate-800 rounded">Phones</a>
                 <a href="laptop.html" class="block p-2 hover:bg-slate-800 rounded">Laptops</a>
-                <a href="monitor.html" class="block p-2 hover:bg-slate-800 rounded">Monitors</a>
-               
-        </aside>
+                 <a href="monitor.html" class="block p-2 hover:bg-slate-800 rounded">Monitors</a>
+            </nav>
+        </div>
+           </aside>
+        
 
     <div class="story-image">
                 <div class="main-img">
                     <!-- Responsive images that stays within a max width -->
-    <img class="max-w-md h-auto mb-6 ms-6" src="Assets\images\Phones.avif" alt="Phone">
-    <img class="max-w-md h-auto mb-6 ms-6" src="Assets\images\Iphone.webp" alt="Phone">  
+                      <!-- Product Card 1 -->
+              <div class="bg-black p-4 rounded-lg shadow-sm hover:shadow-lg transition">
+            <img src="Assets\images\Smart Phone X.webp" alt="Phone" class="rounded-t-lg">  
+                <div class="mt-4">
+                    <h3 class="font-semibold text-lg">I-Phone 17</h3>
+                    <p class="text-gray-600">$2,999.00</p>
+             <a href="404.html"><button class="w-full mt-4 bg-gray-900 text-white py-2 rounded hover:bg-gray-700">Add to Cart</button> </a>
+                </div>
+
+                 <div class="main-img">
+                    <!-- Responsive images that stays within a max width -->
+                      <!-- Product Card 1 -->
+              <div class="bg-black p-4 rounded-lg shadow-sm hover:shadow-lg transition">
+            <img src="Assets\images\Smart Phone X.webp" alt="Phone" class="rounded-t-lg">  
+                <div class="mt-4">
+                    <h3 class="font-semibold text-lg">Smart Phone X"</h3>
+                    <p class="text-gray-600">$999.00</p>
+             <a href="404.html"><button class="w-full mt-4 bg-gray-900 text-white py-2 rounded hover:bg-gray-700">Add to Cart</button> </a>
+                </div>
+   
    
      </div>
                 </div>
@@ -247,11 +270,9 @@
                 <div class="form-group">
                     <label for="Device">Select Device</label>
                     <select id="Device">
-    
-                        <option value="Phone">I-Phone 17- $1999.99</option>
-                         <option value="Phone">Samsung Galaxy X-25 Ultra- $2999.99</option>
-                           <option value="Phone">Smart Phone X - $999.00</option>
-
+                        <option value="Laptops">I-Phone 17 - $1999.99</option>
+                        <option value="Monitors">Smart Phone X - $999.99</option>
+                      
                     </select>
                 </div>
 
@@ -260,52 +281,139 @@
                     <input type="date" id="date" required>
                 </div>
 
-                <button class="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Confirm Purchase</button>
+        <a href="404.html"><button class="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Confirm Purchase</button> </a> 
             </form>
         </section>
     </main>
 
-   <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>ElectroMart</h4>
-                <p>Experience the craft of premium powering</p>
+    <footer class="footer">
             
-            </div>
+            <!-- Footer Section -->
 
-            <div class="footer-section">
-                <h4>Shop Hours</h4>
-                <ul>
-                    <li>Mon - Fri: 9:00 AM - 8:00 PM</li>
-                    <li>Saturday: 10:00 AM - 6:00 PM</li>
-                    <li>Sunday: Closed</li>
-                </ul>
-            </div>
+        <div class="footer-container">
 
-            <div class="footer-section">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="contact.html">Book Appointment</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
+           <!-- Section 1 -->
+           <div class="footer-section text-gray-600">
+            <h4>Quantum-Shopify</h4>
+            <p>We bridge the gap between classic service and cutting-edge, modern tech</p>
 
-            <div class="footer-section">
-                <h4>Visit Us</h4>
+           </div>
+
+        <!-- Section 2 -->
+          <div class="footer-section text-gray-600">
+            <h4>Working Hours</h4>
+            <ul>
+                <li>Mon - Fri: 8:00 AM - 5:00 PM</li>
+                <li>Sat: 10:00 AM - 2:00 PM</li>
+                <li>Sun: Closed</li>
+            </ul>
+          </div>
+
+         <!-- Section 3 -->
+
+           <div class="footer-section text-gray-600">
+                <h4>Visit US</h4>
                 <p>
-                    <i class="fas fa-map-marker-alt" style="color: var(--amber-500); margin-right: 8px;"></i>126 Sage Valley Grove, Toronto, Ontario<br>
-                    <i class="fas fa-phone" style="color: var(--amber-500); margin-right: 8px;"></i> (+1) 587-581-7587<br>
-                    <i class="fas fa-envelope" style="color: var(--amber-500); margin-right: 8px;"></i> hello@ElectroMart.com
+                    126 Sage Valley Grove, Toronto, Ontario<br>
+                    (+1) 587-581-7587<br>
+                    yems457@gmail.com
                 </p>
-            </div>
+           </div>
+
+        <!-- Section 4 -->
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Buy Now</a></li>
+                <li><a href="contact.html">Contact us today</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="404.html">Freebies</a></li>
+            </ul>
+          </div>
+
+          <div class="social-links">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook">Facebook</a>
+              <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
+              <a href="https://instagram.com" target="_blank" aria-label="instagram">instagram</a>
+          </div>
+         
         </div>
+
+
+
+     <!-- Close footer-container -->
+
+    <!-- footer-bottom MUST be outside the container to stay at the bottom center -->
+           <div class="footer-bottom">
+               <p>&copy; 2026 ElectroMart Inc. All Rights Reserved. | Don't let your guard down</p>
         
-        <div class="footer-bottom">
-            <p>&copy; 2026 ElectroMart Inc. All Rights Reserved. | Don't let your guard down.</p>
-        </div>
+           </div>
     </footer>
 
 </body>
+
 </html>
+
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            

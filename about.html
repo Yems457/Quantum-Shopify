@@ -3,322 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about the heritage, the team, and the mission behind ElectroMart.">
-    <title>About Us | Quantum-Shopify.</title>
-    <script src="https://cdn.tailwindcss.com"></script>   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        /* --- 1. VARIABLES & GLOBAL --- */
-        :root {
-            --stone-950: #0c0a09;
-            --stone-900: #1c1917;
-            --stone-800: #292524;
-            --amber-500: #f59e0b;
-            --amber-600: #d97706;
-            --white: #fafaf9;
-            --stone-400: #a8a29e;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--stone-950);
-            color: var(--white);
-            margin: 0;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* --- 2. NAVIGATION & DRAWER --- */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 20px;
-            background: var(--stone-900);
-            border-bottom: 1px solid var(--stone-800);
-            backdrop-filter: blur(10px);
-        }
-
-        header h1 {
-            color: var(--amber-500);
-            font-size: clamp(1.1rem, 4vw, 1.5rem);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Desktop Nav */
-        header nav { margin-left: auto; display: flex; }
-        header nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
-        header nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-        header nav a:hover { color: var(--amber-500); }
-
-        /* Icon & Toggle Logic */
-        #menu-toggle { display: none; }
-        .menu-icons-wrapper { display: none; cursor: pointer; color: var(--amber-500); font-size: 1.5rem; }
-        .close-icon-inside { display: none; }
-
-        @media (max-width: 768px) {
-            .menu-icons-wrapper { display: block; order: -1; }
-
-            header nav {
-                position: fixed;
-                top: 0;
-                left: -300px;
-                width: 280px;
-                height: 100vh;
-                background: var(--stone-900);
-                flex-direction: column;
-                padding: 5rem 2rem;
-                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 5px 0 15px rgba(0,0,0,0.5);
-                border-right: 2px solid var(--amber-500);
-                margin-left: 0;
-                z-index: 2001;
-            }
-
-            header nav ul { flex-direction: column; gap: 1.5rem; width: 100%; }
-
-            #menu-toggle:checked ~ nav { transform: translateX(300px); }
-
-            .close-icon-inside {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 1.8rem;
-                color: var(--amber-500);
-                cursor: pointer;
-            }
-
-            #menu-toggle:checked ~ .menu-icons-wrapper { visibility: hidden; }
-
-            header nav a {
-                font-size: 1.3rem;
-                display: block;
-                border-bottom: 1px solid var(--stone-800);
-                padding-bottom: 10px;
-            }
-        }
-
-        /* --- 3. PAGE CONTENT --- */
-        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 5%; }
-
-        .story-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        .story-image img {
-            width: 100%;
-            border-radius: 12px;
-            border-left: 8px solid var(--amber-500);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        h2 { color: var(--amber-500); font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 1.5rem; }
-        p { color: var(--stone-400); font-size: 1.1rem; }
-
-        /* Barbers Section */
-        .electro-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .electro-card {
-            position: relative;
-            background: var(--stone-900);
-            border-radius: 12px;
-            overflow: hidden;
-            height: 450px;
-            border: 1px solid var(--stone-800);
-        }
-
-        .electro-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .electro-card:hover img { transform: scale(1.1); }
-
-        .electro-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to top, var(--stone-950) 80%, transparent);
-            padding: 2rem 1.5rem;
-            transform: translateY(100px);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .electro-card:hover .barber-info { transform: translateY(0); }
-
-        .electro-info h4 { color: var(--amber-500); margin: 0; font-size: 1.4rem; text-transform: uppercase; }
-        .electro-info span { display: block; color: var(--white); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1rem; }
-
-        /* --- 4. FOOTER --- */
-        footer {
-            background-color: var(--stone-900);
-            padding: 4rem 0 2rem;
-            border-top: 4px solid var(--amber-500);
-            margin-top: 5rem;
-        }
-
-        .footer-container {
-            padding: 0 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h4 { color: var(--amber-500); margin-bottom: 1.2rem; text-transform: uppercase; }
-        .footer-section ul { list-style: none; padding: 0; margin: 0; }
-        .footer-section li { margin-bottom: 0.5rem; color: var(--stone-400); font-size: 0.95rem; }
-        .footer-section a { color: inherit; text-decoration: none; transition: 0.3s; }
-        .footer-section a:hover { color: var(--amber-500); }
-
-       
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid var(--stone-800);
-            padding: 2rem 5% 0;
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: var(--white);
-        }
-
-        @media (max-width: 768px) {
-            .story-section { grid-template-columns: 1fr; gap: 2rem; }
-            .container { padding-top: 3rem; }
-            .electro-info { transform: translateY(0); background: rgba(12, 10, 9, 0.9); }
-        }
-    </style>
+    <title>About Us | Our Story</title>
+    <!-- Tailwind CSS Play CDN for quick prototyping -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-500 text-gray-800">
 
-    <header>
-        <input type="checkbox" id="menu-toggle">
-        
-        <label for="menu-toggle" class="menu-icons-wrapper">
-            <i class="fas fa-bars"></i>
-        </label>
+    <!-- Hero Section -->
+    <header class="bg-yellow-600 py-16 px-4 text-center text-white">
 
-        <h1>Quantum-Shopify</h1>
-
-        <nav>
-            <label for="menu-toggle" class="close-icon-inside">
-                <i class="fas fa-times"></i>
-            </label>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+          <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
+        <h1 class="text-xl md:text-4xl font-bold mb-4">Quantum-Shopify</h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto">We are a team of dedicated professionals committed to delivering excellence through collaboration and innovation.</p>
     </header>
 
-    <main class="container">
-        <section class="story-section ">
-            <article>
-                <h2>Bridging the Gap Between Complexity and Comfort</h2>
-                <p>It started in a cluttered home office, surrounded by wires, screens, and a deep frustration with the "latest" tech that felt more complicated than helpful. As founders of ElectroMart, we realized that the average consumer wasn't just buying gadgets; they were trying to buy better lives.</p>
-                <p>We wanted to create a place where technology feels accessible. Our mission is to curate the most reliable, efficient, and user-friendly electronics on the market—testing them ourselves so you don't have to. Whether it’s a smart home gadget or a high-performance computer, we believe in tech that works for you.</p>
-            </article>
-            <div class="story-image w-64 bg-gray-900 text-white p-4 grid-cols-3 grid-cols-[auto,1fr]">
+    
+
+    <!-- Mission & Story Section -->
+    <section class="max-w-6xl mx-auto py-16 px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">Our Mission</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+               to curate the most reliable, efficient, and user-friendly electronics on the market—testing them ourselves so you don't have to. Whether it’s a smart home gadget or a high-performance computer, we believe in tech that works for you.
+            </p>
+            <p class="text-lg leading-relaxed">
+                This approach not only fosters personal growth but also strengthens the fabric of society, ensuring long-term success for our clients and partners.
+            </p>
+        </div>
+        <div class="bg-gray-200 h-64 rounded-xl shadow-lg flex items-center justify-center italic text-gray-500">
+             <div class="story-image">
                 <img src="Assets\images\Office.avif" alt="Our office">
             </div>
-        </section>
 
-        <section class="Electro-section">
-            <h3 style="text-align: center;">The Master Planners</h3>
-            <p style="text-align: center;">Our team consists of certified specialists with over 15 years of combined experience.</p>
-            
-            <div class="Electro-grid">
-                <div class="electro-card">
-                    <img src="Assets\images\Founder.avif" alt="Founder">
-                    <div class="electro-info">
-                        <h4>Teddy Lee</h4>
-                        <span>Cybersecurity Specialist & Founder</span>
-                        <p>Temmy is a proactive IT Specialist focused on optimizing system performance and enhancing security, with experience in managing network infrastructure and providing technical support. .</p>
-                    </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12">Meet Our Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member Card -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center text-blue-600 font-bold text-xl">JD</div>
+                    <h3 class="text-xl font-semibold">Tedd Ford</h3>
+                    <p class="text-blue-600">Founder & CEO</p>
                 </div>
-
-                <div class="Electro-card w-64 bg-gray-900 text-white p-4 grid-cols-3 grid-cols-[auto,1fr]">
-                  
-                        <h4>Zee Mills</h4>
-                        <span>E-commerce Manager</span>
-                        <p>The Brains Behind the Buy Button</p>
-                    </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center text-green-600 font-bold text-xl">JS</div>
+                    <h3 class="text-xl font-semibold">John Smith</h3>
+                    <p class="text-blue-600">E-commerce Manager</p>
                 </div>
-
-                <div class="Electro-card w-64 bg-gray-900 text-white p-4 grid-cols-3 grid-cols-[auto,1fr]">
-                    <img src="Assets\images\Zee-Mills.avif" alt="Chief Executive Officer">
-                    <div class="Quantum-Shopify">
-                        <h4>Tidal Grooves</h4>
-                        <span>Technician</span>
-                        <p>Handy man that brings you Best-of-both-worlds.</p>
-                    </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="w-24 h-24 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center text-purple-600 font-bold text-xl">AW</div>
+                    <h3 class="text-xl font-semibold">Alice Wong</h3>
+                    <p class="text-blue-600">Technician</p>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Quantum-Shopify</h4>
-                <p>Providing excellent products and a premium customer service since our founding.</p>
-               
-            </div>
-
-            <div class="footer-section">
-                <h4>Shop Hours</h4>
-                <ul>
-                    <li>Monday - Friday: 8AM - 5PM</li>
-                    <li>Saturday: 10AM - 2PM</li>
-                    <li>Sunday: Closed</li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="blog.html">Grooming Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Visit US</h4>
-                <p>
-                    126 Sage Valley Grove, Toronto, Ontario<br>
-                    (+1) 587-581-7587<br>
-                    yems457@gmail.com
-                </p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ElectroMart Inc. All Rights Reserved. | Don't let your guard down.</p>
-        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-600 text--400 py-8 text-center">
+        <p>&copy; 2026 Quantum-Shopify. All Rights Reserved. | Don't let your guard down.</p>
     </footer>
+
 </body>
 </html>
