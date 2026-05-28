@@ -1,4 +1,4 @@
-# ElectrMart Inc.
+# QUANTUM-SHOPIFY.
 A comprehensive e-commerce platform dedicated to premium electronics, such as smartphones, laptops, high-resolution monitors, and essential accessories.
 
 ## Mission
