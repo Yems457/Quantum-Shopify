@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Photo Album</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        @import url('https://googleapis.com');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fdfaf6; /* Warm pastel cream background */
+        }
+        .title-font {
+            font-family: 'Fredoka+One', cursive;
+        }
+        /* Masonry-like gap offsets for playful look */
+        .album-grid > div:nth-child(even) {
+            transform: translateY(1.5rem);
+        }
+        @media (max-width: 768px) {
+            .album-grid > div:nth-child(even) {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-12">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+        <h1 class="title-font text-5xl md:text-6xl text-purple-600 tracking-wide drop-shadow-sm">
+            🌟 Little Explorers 🌟
+        </h1>
+        <p class="text-xl text-gray-600 mt-3">Our favorite adventures and smiling faces!</p>
+    </header>
+
+    <!-- Photo Album Grid -->
+    <div class="album-grid max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pb-12">
+
+        <!-- Photo Card 1 -->
+        <div class="bg-white p-4 rounded-3xl shadow-lg border-4 border-yellow-200 rotate-2 hover:-rotate-1 transition-transform duration-300 hover:shadow-2xl">
+            <div class="h-64 overflow-hidden rounded-2xl bg-pink-100">
+                <img src="https://unsplash.com" alt="Playing in the park" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="title-font text-center text-pink-500 mt-4 text-lg">🌳 Sunny Day Park</p>
+        </div>
+
+        <!-- Photo Card 2 -->
+        <div class="bg-white p-4 rounded-3xl shadow-lg border-4 border-blue-200 -rotate-1 hover:rotate-1 transition-transform duration-300 hover:shadow-2xl">
+            <div class="h-64 overflow-hidden rounded-2xl bg-yellow-100">
+                <img src="https://unsplash.com" alt="Drawing and painting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="title-font text-center text-blue-500 mt-4 text-lg">🎨 Little Artist</p>
+        </div>
+
+        <!-- Photo Card 3 -->
+        <div class="bg-white p-4 rounded-3xl shadow-lg border-4 border-green-200 rotate-1 hover:-rotate-2 transition-transform duration-300 hover:shadow-2xl">
+            <div class="h-64 overflow-hidden rounded-2xl bg-purple-100">
+                <img src="https://unsplash.com" alt="Eating ice cream" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="title-font text-center text-green-500 mt-4 text-lg">🍦 Ice Cream Fun</p>
+        </div>
+
+        <!-- Photo Card 4 -->
+        <div class="bg-white p-4 rounded-3xl shadow-lg border-4 border-purple-200 -rotate-2 hover:rotate-1 transition-transform duration-300 hover:shadow-2xl">
+            <div class="h-64 overflow-hidden rounded-2xl bg-blue-100">
+                <img src="https://unsplash.com" alt="Reading a book" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="title-font text-center text-purple-500 mt-4 text-lg">📚 Story Time</p>
+        </div>
+
+        <!-- Photo Card 5 -->
+        <div class="bg-white p-4 rounded-3xl shadow-lg border-4 border-pink-200 rotate-1 hover:-rotate-1 transition-transform duration-300 hover:shadow-2xl">
+            <div class="h-64 overflow-hidden rounded-2xl bg-green-100">
+                <img src="https://unsplash.com" alt="Birthday party" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="title-font text-center text-pink-500 mt-4 text-lg">🎂 Best Birthday Ever!</p>
+        </div>
+
+        <!-- Photo Card 6 -->
+        <div class="bg-white p-4 rounded-3xl shadow-lg border-4 border-yellow-200 -rotate-1 hover:rotate-2 transition-transform duration-300 hover:shadow-2xl">
+            <div class="h-64 overflow-hidden rounded-2xl bg-pink-100">
+                <img src="https://unsplash.com" alt="Playing with pets" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <p class="title-font text-center text-yellow-500 mt-4 text-lg">🐾 Puppy Cuddles</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
